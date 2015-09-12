@@ -1,0 +1,58 @@
+Mia Armstrong
+CS202 
+Program 1 
+Design Write Up and Debugger discussion
+Chicken Foot: Dominoes game program
+
+This program creates bone objects, which represent dominoes in the double nine set. The chicken yard class then creates an entire set of the bones representing the entire set of the double nine set. The shuffle function is then called. After the shuffle function is called, the nodes are assigned letter coordinates. When the yard is displayed it will look like this...
+
+A 1 2 3 4 5 6 7 8 9 
+B 1 2 3 4 5 6 7 8 9
+C 1 2 3 4 5 6 7 8 9
+D 1 2 3 4 5 6 7 8 9
+E 1 2 3 4 5 6 7 8 9
+F 1 2 3 4 5 6 7 8 9
+G 1 2 3 4 5 6 7 8 9
+H 1 2 3 4 5 6 7 8 9
+I  1 2 3 4 5 6 7 8 9
+
+If a bone is removed from the yard it will be displayed like this:
+
+A 1 2 3 4 5 6 7 8 9 
+B 1 2 3 4 5 6 7 8 9
+C 1 2 3 X 5 6 7 8 9
+D 1 2 3 4 5 6 7 8 9
+E 1 2 3 4 5 6 7 8 9
+F 1 2 3 4 5 6 7 8 9
+G 1 2 3 4 5 6 7 8 9
+H 1 2 3 4 5 6 7 8 9
+I  1 2 3 4 5 6 7 8 9
+
+C4 was removed.
+
+To start the game, each player takes 7 bones from the bone yard. Each player's largest double is shown:
+
+Player 1: 4 | 4
+Player 2: 6 | 6
+Player 3: 9 | 9
+
+Player 3 has the highest double.
+
+The highest double is placed in the field.
+
+…
+
+Breakdown of the classes:
+
+The bone class manages the bones. The hand class “has a” bone and manages the array of bones. Player, which also has a name and a score to manage, “is a” hand. The yard class also “has a” hand, it is used as the array part of the structure. 
+
+The y_node class and the f_node classes “is a” node. They are used for the yard and the field classes. 
+The yard class manages the yard using the functions, create: creates a whole set of bones then shuffles then sets their coordinates, display_all, shuffle: shuffles each array and then swaps the nodes around, remove: takes a bone from the yard and supplies it to a player hand and puts an X as the coordinates. 
+
+I chose to use an array as the data structure for the hand class. I chose an array for fast retrieval. It meets the design requirements even though there is potential for unused space in the array the array size is small and there are only a few players and therefore only a few arrays. I think if I had to do the assignment over again I might choose to use a hash table instead of an array for the hand class. The linear linked list of arrays works well for the yard class although I think an array of arrays would also have worked since a set of bones is a set number. Even just an array would work for the yard class. I think my design is efficient in that the array for the hand class gives instant access to each bone in the hand. Adding and removing bones is also fairly simple. There is some waste of memory but I feel that the amount of waste is small in comparison to the efficiency of the access. 
+
+If I had more time I would have implemented the yard class more completely. I ran out of time due to problems that I encountered while implementing other classes and could not get to the yard class in time. I hope to finish the yard class completely before the next due date for the rest of the assignment. 
+
+I feel like my program is close to being object oriented. I stayed away from the use of structs and I implemented a class hierarchy when I felt it was a good idea. I know I have more to learn but I feel that this program is on it's way to being object oriented. I feel like the node classes are not object oriented, however, I am not totally sure how to implement the design without them yet. 
+
+I used gdb debugger for debugging this program. It helped me find segmentation errors as well as helping me step through the functions and figure out where the program was going while it was running. I forgot to document the things I used gdb for while debugging and so I don't have a lot to write about it. I will remember to document it next time. 
